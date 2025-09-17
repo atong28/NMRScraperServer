@@ -1,0 +1,1 @@
+Basic format parser for copy pasting JNP articles and formatting GPT output tables

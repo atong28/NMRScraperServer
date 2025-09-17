@@ -1,0 +1,5 @@
+version: '3'
+services:
+  template-streamlit:
+    ports:
+    - "8000:8000"
