@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Anthony Tong <atong28.usa@gmail.com>"]
+channels = ["conda-forge"]
+name = "ScraperServer"
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+fastapi = ">=0.116.2,<0.117"
+markdown-it-py = ">=4.0.0,<5"
+mdit-py-plugins = ">=0.5.0,<0.6"
+uvicorn = ">=0.35.0,<0.36"

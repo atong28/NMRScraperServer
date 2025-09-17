@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Processing Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/styles.css?v=1" />
+</head>
+<body>
+  <header>
+    <h1>Simple Processing Server</h1>
+    <p>No storage. Everything is processed on request.</p>
+  </header>
+
+  <main>
+    <!-- Component 1: Article condenser -->
+    <section class="card">
+      <h2>Article → Condensed Text</h2>
+      <label for="article-input" class="label">Paste article text</label>
+      <textarea id="article-input" class="textarea" rows="10" placeholder="Paste article here..."></textarea>
+
+      <div class="actions">
+        <button id="process-article-btn" class="btn">Process</button>
+      </div>
+
+      <label for="article-output" class="label">Condensed output</label>
+      <textarea id="article-output" class="textarea" rows="8" readonly placeholder="Condensed text will appear here..."></textarea>
+
+      <div class="actions">
+        <button id="copy-article-btn" class="btn secondary">Copy condensed</button>
+      </div>
+    </section>
+
+    <!-- Component 2: GPT response table parser (read-only) -->
+    <section class="card">
+      <h2>GPT Response → Tables + JSON</h2>
+      <p class="hint">Paste a GPT response that contains Markdown headings and tables. We’ll render read-only tables and also show a condensed text + the table JSON.</p>
+      <label for="gpt-input" class="label">Paste GPT response</label>
+      <textarea id="gpt-input" class="textarea" rows="12" placeholder="# Title&#10;&#10;| Col A | Col B |&#10;|---|---|&#10;| foo | bar |"></textarea>
+
+      <div class="actions">
+        <button id="parse-tables-btn" class="btn">Parse tables</button>
+      </div>
+
+      <div id="tables-output" class="tables-output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Local-only demo. Nothing is stored on the server.</small>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
